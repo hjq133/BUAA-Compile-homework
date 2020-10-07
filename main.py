@@ -30,7 +30,7 @@ for line in f.readlines():
             while i < len(line) and line[i].isalnum():
                 i += 1
             if line[start:i] in key_word.keys():  # 关键字
-                print(line[start:i])
+                print(key_word[line[start:i]])
             else:  # 标识符
                 print('Ident({})'.format(line[start:i]))
         elif line[i].isdigit():  # 数字开头
