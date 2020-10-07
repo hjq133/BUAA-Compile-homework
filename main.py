@@ -47,4 +47,4 @@ for line in f.readlines():
         elif line[i] == ' ':
             i += 1
         else:
-            exit(-1)
+            exit(0)
