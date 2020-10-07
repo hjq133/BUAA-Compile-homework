@@ -48,5 +48,6 @@ for line in f.readlines():
         elif line[i] == ' ':
             i += 1
         else:
+            print('Unknown')
             exit(0)
 exit(0)
