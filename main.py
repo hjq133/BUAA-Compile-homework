@@ -3,7 +3,7 @@ import sys
 key_word = {'BEGIN': 'Begin',
             'END': 'End',
             'FOR': 'For',
-            'IF': 'if',
+            'IF': 'If',
             'THEN': 'Then',
             'ELSE': 'Else'
             }
