@@ -1,22 +1,23 @@
-key_word = {'BEGIN': 'Begin', 
-            'END': 'End', 
-            'FOR': 'For', 
-            'IF': 'if', 
+import sys
+
+key_word = {'BEGIN': 'Begin',
+            'END': 'End',
+            'FOR': 'For',
+            'IF': 'if',
             'THEN': 'Then',
             'ELSE': 'Else'
-           }
+            }
 
-delimiter = {':': 'Colon', 
+delimiter = {':': 'Colon',
              '+': 'Plus',
              '*': 'Star',
              ',': 'Comma',
-             '(': 'LParenthesis', 
-             ')': 'RParenthesis', 
+             '(': 'LParenthesis',
+             ')': 'RParenthesis',
              ':=': 'Assign'
-            }
+             }
 
-file_path = input()
-
+file_path = sys.argv[1]
 
 f = open(file_path, 'r')
 for line in f.readlines():
@@ -24,22 +25,22 @@ for line in f.readlines():
     i = 0
     while i < len(line):
         start = i
-        if line[i].isalpha(): # 字符开头
+        if line[i].isalpha():  # 字符开头
             i += 1
             while i < len(line) and line[i].isalnum():
-                i+=1
-            if line[start:i] in key_word.keys(): # 关键字
+                i += 1
+            if line[start:i] in key_word.keys():  # 关键字
                 print(line[start:i])
-            else: # 标识符 
+            else:  # 标识符
                 print('Ident({})'.format(line[start:i]))
-        elif line[i].isdigit():  #　数字开头
+        elif line[i].isdigit():  # 数字开头
             i += 1
             while i < len(line) and line[i].isdigit():
-                i+=1
+                i += 1
             print('Int({})'.format(line[start:i]))
-        elif line[i] in delimiter.keys(): 
+        elif line[i] in delimiter.keys():
             key = line[i]
-            if line[i] == ':' and i+1 < len(line) and line[i+1] == '=':
+            if line[i] == ':' and i + 1 < len(line) and line[i + 1] == '=':
                 key = ':='
                 i += 1
             print(delimiter[key])
