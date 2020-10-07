@@ -48,3 +48,4 @@ for line in f.readlines():
             i += 1
         else:
             exit(0)
+exit(0)
