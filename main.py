@@ -37,7 +37,7 @@ for line in f.readlines():
             i += 1
             while i < len(line) and line[i].isdigit():
                 i += 1
-            print('Int({})'.format(line[start:i]))
+            print('Int({})'.format(int(line[start:i])))
         elif line[i] in delimiter.keys():
             key = line[i]
             if line[i] == ':' and i + 1 < len(line) and line[i + 1] == '=':
